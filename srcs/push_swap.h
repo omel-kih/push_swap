@@ -6,13 +6,15 @@
 /*   By: omel-kih <omel-kih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 19:29:55 by omel-kih          #+#    #+#             */
-/*   Updated: 2026/11/20 12:53:00 by omel-kih         ###   ########.fr       */
+/*   Updated: 2026/11/21 16:39:42 by omel-kih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "../Libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 # include <limits.h>
 # include <stddef.h>
 # include <stdlib.h>
@@ -41,10 +43,21 @@ typedef struct bth_stacks
 {
 	t_stack	a;
 	t_stack	b;
-} both_stacks;
+}			t_both_stacks;
 
-# include "../Libft/libft.h"
-# include "../ft_printf/ft_printf.h"
-# include "parsing/parsing.h"
+typedef struct s_op
+{
+	int		sa;
+	int		sb;
+	int		ss;
+	int		pa;
+	int		pb;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+}			t_op;
 
 #endif

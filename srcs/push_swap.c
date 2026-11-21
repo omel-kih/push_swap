@@ -6,13 +6,13 @@
 /*   By: omel-kih <omel-kih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 19:01:30 by omel-kih          #+#    #+#             */
-/*   Updated: 2026/11/21 11:47:28 by omel-kih         ###   ########.fr       */
+/*   Updated: 2026/11/21 16:30:07 by omel-kih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stacks(both_stacks *stacks)
+void	init_stacks(t_both_stacks *stacks)
 {
 	stacks->a.data = NULL;
 	stacks->a.head = 0;
@@ -23,6 +23,7 @@ void	init_stacks(both_stacks *stacks)
 	stacks->b.size = 0;
 	stacks->b.capacity = 0;
 }
+
 int	error_upt(void)
 {
 	ft_printf("Error\n");
@@ -31,8 +32,9 @@ int	error_upt(void)
 
 int	main(int argc, char **argv)
 {
-	t_options	options;
-	both_stacks	stacks;
+	t_options		options;
+	t_both_stacks	stacks;
+	t_op			op;
 
 	if (argc == 1)
 		return (0);
