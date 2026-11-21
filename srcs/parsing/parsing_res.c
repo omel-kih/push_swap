@@ -6,38 +6,37 @@
 /*   By: omel-kih <omel-kih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 18:55:53 by omel-kih          #+#    #+#             */
-/*   Updated: 2026/11/18 13:08:47 by omel-kih         ###   ########.fr       */
+/*   Updated: 2026/11/20 13:08:53 by omel-kih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
-#include "push_swap.h"
 
-int	flags_set(int argc, char **argv, t_options *options)
+int	clean_all(t_stack *stack)
 {
-	int	i;
-	int	re;
-
-	i = 1;
-	while (ft_strncmp(argv[i], "--", 2) == 0)
+	if (stack->data)
 	{
-		if (re = simple_check(argv[i], options))
-		{
-		}
-		else if (re = medium_check(argv[i], options))
-		{
-		}
-		else if (re = complex_check(argv[i], options))
-		{
-		}
-		else if (re = adaptive_check(argv[i], options))
-		{
-		}
-		if (re == -1)
-			return ();
+		free(stack->data);
+		stack->data = NULL;
 	}
+	stack->capacity = 0;
+	stack->size = 0;
+	return (-1);
 }
 
-int	parsing_res(int argc, char **argv, t_options *options)
+int	parsing_res(char **argv, t_options *options, both_stacks *stacks)
 {
+	int	i;
+
+	if ((i = flags_set(argv, options)) == -1)
+		return (-1);
+	if (options->strategy == 0)
+		options->strategy = 4;
+	if (numbers_check(argv, i, &stacks->a) == -1)
+		return (clean_all(&stacks->a));
+	stacks->b.data = malloc(sizeof(int) * stacks->a.capacity);
+	if (!stacks->b.data)
+		return (clean_all(&stacks->a));
+	stacks->b.capacity = stacks->a.capacity;
+	return (1);
 }
