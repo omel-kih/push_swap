@@ -6,7 +6,7 @@
 /*   By: omel-kih <omel-kih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 18:55:53 by omel-kih          #+#    #+#             */
-/*   Updated: 2026/11/20 13:08:53 by omel-kih         ###   ########.fr       */
+/*   Updated: 2026/11/21 13:27:58 by omel-kih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	clean_all(t_stack *stack)
 	return (-1);
 }
 
-int	parsing_res(char **argv, t_options *options, both_stacks *stacks)
+int	parsing_res(char **argv, t_options *options, t_both_stacks *stacks)
 {
 	int	i;
 
