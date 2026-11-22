@@ -1,0 +1,6 @@
+1- Stack operations
+2- Small sorting
+3- Large sorting algorithm
+4- Optimization
+5- Integration ( nrabto parsin and sorting and Benchmark)
+6-Testing
