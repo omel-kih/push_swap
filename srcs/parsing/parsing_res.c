@@ -6,7 +6,7 @@
 /*   By: omel-kih <omel-kih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 18:55:53 by omel-kih          #+#    #+#             */
-/*   Updated: 2026/11/21 13:27:58 by omel-kih         ###   ########.fr       */
+/*   Updated: 2026/11/23 12:33:16 by omel-kih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	parsing_res(char **argv, t_options *options, t_both_stacks *stacks)
 {
 	int	i;
 
-	if ((i = flags_set(argv, options)) == -1)
+	i = flags_set(argv, options);
+	if (i == -1)
 		return (-1);
 	if (options->strategy == 0)
 		options->strategy = 4;
