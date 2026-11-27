@@ -6,11 +6,11 @@
 /*   By: omel-kih <omel-kih@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 19:01:30 by omel-kih          #+#    #+#             */
-/*   Updated: 2026/11/23 13:51:30 by omel-kih         ###   ########.fr       */
+/*   Updated: 2026/11/27 19:02:12 by omel-kih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "test.h"
 
 void	init_stacks(t_both_stacks *stacks)
 {
@@ -30,6 +30,18 @@ int	error_upt(void)
 	return (0);
 }
 
+void	prinf(t_stack s)
+{
+	int	i;
+
+	i = 0;
+	while (i < s.size)
+	{
+		ft_printf("%d", s.data[(s.head + i) % s.capacity]);
+		i++;
+	}
+}
+
 int	manager(char **argv, t_options *options, t_both_stacks *stacks,
 		t_op_count *op)
 {
@@ -37,7 +49,8 @@ int	manager(char **argv, t_options *options, t_both_stacks *stacks,
 	init_stacks(stacks);
 	if (parsing_res(argv, options, stacks) == -1)
 		return (error_upt());
-	ft_printf("ok");
+	sort_manager(&stacks->a, &stacks->b, op);
+	//prinf(stacks->a);
 	if (stacks->a.data)
 	{
 		clean_all(&stacks->a);
